@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#F7F8F9"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+    <!-- AppBarLayout -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:elevation="0dp">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#FFFFFF"
+            app:layout_scrollFlags="scroll|enterAlways">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rent Car"
+                android:textColor="#20232A"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:layout_gravity="start|center_vertical" />
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="24dp"
+        android:layout_marginTop="?attr/actionBarSize">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Age 입력 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Age"
+                android:textStyle="bold"
+                android:textColor="#20232A"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:id="@+id/age_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical|center_horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/age_value_card"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="4dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="8dp">
+
+                    <TextView
+                        android:id="@+id/age_slider_value_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:background="?android:attr/selectableItemBackgroundBorderless"
+                        android:gravity="center"
+                        android:text="20"
+                        android:textStyle="bold"
+                        android:textColor="#20232A" />
+                </androidx.cardview.widget.CardView>
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/age_slider"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:valueFrom="20"
+                    android:valueTo="100"
+                    android:stepSize="1"
+                    android:value="20"
+                    style="@style/InstagramSliderStyle" />
+            </LinearLayout>
+
+            <!-- 성별 선택 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Gender"
+                android:textStyle="bold"
+                android:textColor="#20232A"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp" />
+
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/genderToggleGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:singleSelection="true"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/male"
+                    android:layout_width="0dp"
+                    style="@style/CustomMaterialButtonStyle"
+                    android:layout_height="wrap_content"
+                    android:text="Male"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/female"
+                    app:strokeWidth="0dp"
+                    style="@style/CustomMaterialButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Female"
+
+                    android:layout_weight="1" />
+
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+            <!-- Recommendation Count 선택 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="View"
+                android:textColor="#20232A"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp" />
+
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/viewToggleGroup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:singleSelection="true"
+                android:backgroundTint="@color/button_selector"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent">
+
+                <!-- 각 버튼에 android:layout_marginEnd 속성을 추가하여 버튼 간의 간격을 조정합니다. -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button5"
+                    style="@style/CustomMaterialButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Few"
+
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button10"
+                    style="@style/CustomMaterialButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Medium"
+
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp" />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/button20"
+                    style="@style/CustomMaterialButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Many"
+
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"/>
+
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+
+
+            <!-- Rent Start Date & Finish Date 선택 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:text="Select Date Range"
+                android:textColor="#20232A"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#E1E8ED">
+
+                <EditText
+                    android:id="@+id/dateRange"
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:inputType="none"
+                    android:hint="Start Date - End Date"
+                    android:focusable="false"
+                    android:focusableInTouchMode="true"
+                    android:onClick="showDateRangePicker"
+                    android:textColor="#20232A"
+                    android:contentDescription="Choose date range" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Number of People 선택 -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Number of People"
+                android:textStyle="bold"
+                android:textColor="#20232A"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="8dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical|center_horizontal">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/value_card"
+                    android:layout_width="50dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    app:cardBackgroundColor="#FFFFFF"
+                    app:cardCornerRadius="20dp"
+                    app:cardElevation="4dp"
+                    android:layout_marginStart="6dp"
+                    android:layout_marginEnd="8dp">
+
+                    <TextView
+                        android:id="@+id/slider_value_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:background="?android:attr/selectableItemBackgroundBorderless"
+                        android:gravity="center"
+                        android:text="1"
+                        android:textStyle="bold"
+                        android:textColor="#20232A" />
+                </androidx.cardview.widget.CardView>
+
+                <com.google.android.material.slider.Slider
+                    android:id="@+id/number_of_people_slider"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:valueFrom="1"
+                    android:valueTo="10"
+                    android:stepSize="1"
+                    android:value="1"
+                    style="@style/InstagramSliderStyle" />
+            </LinearLayout>
+
+
+
+
+            <!-- Submit 버튼 -->
+            <Button
+                android:id="@+id/Search"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="Submit"
+                android:backgroundTint="#0095F6"
+                android:layout_marginTop="32dp"
+                android:textColor="@color/white" />
+
+
+        </LinearLayout>
+    </ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
